@@ -45,19 +45,31 @@ class PostsNew extends Component {
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
       <br/>
+      <h2>Add New Candidate</h2>
+      <br/>
         <Field
-          label="Title:"
-          name="title"
+          label="Vacancy:"
+          name="vacancy"
           component={this.renderField}
         />
         <Field
-          label="Categories:"
-          name="categories"
+          label="Name:"
+          name="name"
           component={this.renderField}
         />
         <Field
-          label="Content:"
-          name="content"
+          label="E-mail:"
+          name="email"
+          component={this.renderField}
+        />
+        <Field
+          label="Mobile:"
+          name="mobile"
+          component={this.renderField}
+        />
+        <Field
+          label="Skills:"
+          name="skills"
           component={this.renderField}
         />
         <br/>
@@ -71,14 +83,20 @@ class PostsNew extends Component {
 function validate(values) {
   const errors = {};
 
-  if (!values.title) {
-    errors.title = "Enter a title";
+  if (!values.vacancy) {
+    errors.title = "Enter a vacancy";
   }
-  if (!values.categories) {
-    errors.categories = "Enter some categories";
+  if (!values.name) {
+    errors.categories = "Enter a name";
   }
-  if (!values.content) {
-    errors.content = "Enter some content please";
+  if (!values.email) {
+    errors.content = "Enter an email";
+  }
+  if (!values.mobile) {
+    errors.content = "Enter a mobile";
+  }
+  if (!values.skills) {
+    errors.content = "Enter some skills";
   }
 
   // If errors is empty, the form is fine to submit

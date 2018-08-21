@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchPost, deletePost } from "../actions";
 import MethodLogger from "../util-decorators/logger";
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
 // Router properties on props
 // @withRouter()
@@ -48,10 +48,12 @@ class PostsShow extends Component {
           Delete Post
         </button>
         <br/>
-        <h3>{post.title}</h3>
-        <h6>Categories: {post.categories}</h6>
+        <h3>{post.name}</h3>
+        <h6>Vacancy: {post.vacancy}</h6>
         <br/>
-        <p>{post.content}</p>
+        <h6>Mobile: {post.mobile}</h6>
+        <br/>
+        <p>{post.skills}</p>
       </div>
     );
   }
